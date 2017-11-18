@@ -1,0 +1,24 @@
+After initializing
+[50,free]
+
+After the first malloc
+[10,allocated]->[40,free]
+
+After the second malloc
+[10,allocated]->[20,allocated]->[20,free]
+
+Asking for an un-allocatable block
+Good. The call to malloc returned NULL
+
+Free the second block
+[10,free]->[20,allocated]->[20,free]
+
+Allocate a block too big for the initial open block
+[10,free]->[20,allocated]->[15,allocated]->[5,free]
+
+Free the most recently allocated pointer
+[10,free]->[20,allocated]->[20,free]
+
+Free the middle block
+[50,free]
+
